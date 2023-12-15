@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        fieldset{
+            display: inline-block;
+            height: 120px;
+            background-color: rgb(231, 195, 181);
+        }
+        td{
+            text-align: center;
+            height: 30px;
+        }
+        table{
+            height: 70px;
+        }
+        select{
+            width: 120px;
+         margin-left: 40px;
+            text-align: center;
+        }
+        option{
+        font-size: 15px;
+        }
+        input[type="button"]{
+         width: 120px;
+         height: 26px;
+         margin-left: 40px;
+        }
+        input[type="button"]:hover{
+            box-shadow: 2px 2px chocolate, -2px -2px chocolate;
+        }
+        label{
+            background-color: rgb(136, 81, 81);
+            color: white;
+            width: 90px;
+            display: block;
+            border-radius: 51px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend align="center" cellspacing="0">
+            Use for calculation
+        </legend>
+        <table>
+            <form name="calculation">
+            <tr>
+                <td>
+                    <label for="n1">Number1:- </label>
+                </td>
+                <td>
+                    <input type="number" id="n1" name="number1" >
+                </td>
+                 <td>
+                    <label for="n2">Number2:-</label>
+                 </td>
+                 <td>
+                    <input type="number" id="n2" name="number2">
+                 </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="dropdown">
+                    <select name="use">
+                        <option>+</option>
+                        <option>-</option>
+                        <option>*</option>
+                        <option>/</option>
+                    </select>
+                </td>
+                <td colspan="4" class="btn">
+                    <input type="button" onclick="data()" value="Click Me">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    Result:- <input type="number" name="result">
+                </td>
+            </tr>
+        </form>
+        </table>
+    </fieldset>
+    <script>
+        function data(){
+        nme1=parseInt(document.calculation.number1.value);
+        nme2=parseInt(document.calculation.number2.value);
+        nme3=document.calculation.use.value;
+        switch(nme3){
+            case '+':
+                // document.write("Sum of two numbers is " +(nme1+nme2));
+                document.calculation.result.value=nme1+nme2;
+
+                break
+                case '-': 
+                    document.calculation.result.value=nme1-nme2;
+                // document.write("Substraction of two numbers is "+(nme1-nme2));
+                break;
+                case '*':
+                    // document.write("Multiple of two numbers is "+(nme1*nme2));
+                    document.calculation.result.value=nme1*nme2;
+                    break;
+                    case '/':
+                    document.calculation.result.value=nme1/nme2;
+                        // document.write("Division of two numbers is "+(nme1/nme2));
+                        break;
+                        default :
+                        document.write("Not valid");
+                        break;
+        }
+        document.calculation.result.value=resu;
+        }
+    </script>
+</body>
+</html>
